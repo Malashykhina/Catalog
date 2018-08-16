@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Teams";
+}
+@model IEnumerable<Catalog.Core.Team>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Teams
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.ActionLink( item.Name.ToString(), "TeamDetails", new { team = item.Name.ToString() })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

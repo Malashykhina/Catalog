@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Catalog.Core.Person>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               People
+            </th>
+            <th>
+               Team
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Team.Name)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
